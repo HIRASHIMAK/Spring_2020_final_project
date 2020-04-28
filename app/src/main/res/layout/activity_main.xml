@@ -2,8 +2,10 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ParentLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorAccent"
     tools:context=".MainActivity">
 
     <EditText
@@ -23,7 +25,10 @@
         android:id="@+id/viewListButton"
         android:layout_width="283dp"
         android:layout_height="54dp"
+        android:layout_marginBottom="24dp"
+        android:background="@android:color/holo_green_dark"
         android:text="View Todo List "
+        android:textColor="@android:color/background_light"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -37,9 +42,10 @@
         android:inputType="date"
         app:layout_constraintBottom_toTopOf="@+id/viewListButton"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.08"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/taskSummaryText"
-        app:layout_constraintVertical_bias="0.151" />
+        app:layout_constraintVertical_bias="0.199" />
 
     <EditText
         android:id="@+id/timeText"
@@ -50,7 +56,41 @@
         android:inputType="time"
         app:layout_constraintBottom_toTopOf="@+id/viewListButton"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.08"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/dateText"
-        app:layout_constraintVertical_bias="0.213" />
+        app:layout_constraintVertical_bias="0.146" />
+
+    <Button
+        android:id="@+id/addTaskButton"
+        android:layout_width="110dp"
+        android:layout_height="67dp"
+        android:background="@android:color/holo_blue_light"
+        android:text="add task"
+        android:textColor="@android:color/background_light"
+        app:layout_constraintBottom_toBottomOf="@+id/timeText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.88"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/dateText"
+        app:layout_constraintVertical_bias="0.466" />
+
+    <TextView
+        android:id="@+id/tilteTextView"
+        android:layout_width="294dp"
+        android:layout_height="55dp"
+        android:background="@color/title_colro"
+        android:lineSpacingExtra="8sp"
+        android:text="Todo List"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="@android:color/background_light"
+        android:textSize="50sp"
+        android:textStyle="italic"
+        android:typeface="serif"
+        app:layout_constraintBottom_toTopOf="@+id/taskSummaryText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.692"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.347" />
 </androidx.constraintlayout.widget.ConstraintLayout>
