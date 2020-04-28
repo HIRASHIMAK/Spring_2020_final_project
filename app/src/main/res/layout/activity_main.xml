@@ -35,11 +35,12 @@
 
     <EditText
         android:id="@+id/dateText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="218dp"
+        android:layout_height="46dp"
         android:ems="10"
-        android:hint="Enter task due date"
+        android:hint="Enter task due date (M/D/Y)"
         android:inputType="date"
+        android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@+id/viewListButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.08"
@@ -49,11 +50,12 @@
 
     <EditText
         android:id="@+id/timeText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="218dp"
+        android:layout_height="46dp"
         android:ems="10"
-        android:hint="Enter task due time"
+        android:hint="Enter task due time (00:00)"
         android:inputType="time"
+        android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@+id/viewListButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.08"
