@@ -37,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
                 //Create a string of due date.
                 EditText timeText = findViewById(R.id.timeText);
                 String dueTime = timeText.getText().toString();
+                System.out.println("Add task Button is pressed.");
             }
         });
 
