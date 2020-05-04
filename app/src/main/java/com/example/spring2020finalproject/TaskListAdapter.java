@@ -3,6 +3,7 @@ package com.example.spring2020finalproject;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -17,12 +18,14 @@ public class TaskListAdapter extends RecyclerView.Adapter<TaskListAdapter.TaskVi
         public TextView taskSummary;
         public TextView dueDate;
         public TextView dueTime;
+        public Button removeTask;
 
         public TaskViewHolder(View itemView) {
             super(itemView);
             taskSummary = itemView.findViewById(R.id.taskTextView);
             dueDate = itemView.findViewById(R.id.dueDateTextView);
             dueTime = itemView.findViewById(R.id.dueTimeTextView);
+            removeTask = itemView.findViewById(R.id.removeTaskButton);
         }
     }
 
@@ -39,11 +42,17 @@ public class TaskListAdapter extends RecyclerView.Adapter<TaskListAdapter.TaskVi
     }
 
     @Override
-    public void onBindViewHolder(@NonNull TaskViewHolder holder, int position) {
-        TaskItem currentItem = tasksList.get(position);
+    public void onBindViewHolder(@NonNull final TaskViewHolder holder, final int position) {
+        final TaskItem currentItem = MainActivity.taskList.get(position);
         holder.taskSummary.setText(currentItem.getTask());
         holder.dueDate.setText(currentItem.getDueDate());
         holder.dueTime.setText(currentItem.getDueTime());
+        // Below is currently under development.
+        holder.removeTask.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View view) {
+                viewList.index = MainActivity.taskList.indexOf(currentItem);
+            }
+        });
     }
 
     @Override
