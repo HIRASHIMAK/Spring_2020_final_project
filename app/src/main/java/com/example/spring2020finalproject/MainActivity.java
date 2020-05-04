@@ -1,6 +1,9 @@
 package com.example.spring2020finalproject;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -9,14 +12,14 @@ import android.widget.EditText;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
-    public static final ArrayList<TaskItem> taskList = new ArrayList<>();
+    public static ArrayList<TaskItem> taskList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //Below switches the screen to the view_list screen from the initial screen.
+        //Below switches the screen to the view_list screen.
         Button viewListButton = findViewById(R.id.viewListButton);
         viewListButton.setOnClickListener(new View.OnClickListener(){
             public void onClick(View view) {
@@ -24,7 +27,6 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
 
         //Below handles the case when "Add task" button is hit
         Button addTaskButton = findViewById(R.id.addTaskButton);
@@ -42,7 +44,6 @@ public class MainActivity extends AppCompatActivity {
                 System.out.println("Add task Button is pressed.");
                 // Add the created task to the ArrayList of TaskItems
                 taskList.add(new TaskItem(task, dueDate, dueTime));
-                System.out.println(taskList.get(taskList.size() - 1).getDueDate() + taskList.get(taskList.size() - 1).getDueTime());
             }
         });
     }
