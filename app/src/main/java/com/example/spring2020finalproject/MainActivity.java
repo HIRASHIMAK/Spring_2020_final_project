@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //Below switches the screen to the view_list screen.
+        //Below switches the screen to the view_list screen from the initial screen.
         Button viewListButton = findViewById(R.id.viewListButton);
         viewListButton.setOnClickListener(new View.OnClickListener(){
             public void onClick(View view) {
