@@ -9,7 +9,7 @@ import android.widget.EditText;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
-    public static ArrayList<TaskItem> taskList = new ArrayList<>();
+    public static final ArrayList<TaskItem> taskList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
 
         //Below handles the case when "Add task" button is hit
         Button addTaskButton = findViewById(R.id.addTaskButton);
@@ -41,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
                 System.out.println("Add task Button is pressed.");
                 // Add the created task to the ArrayList of TaskItems
                 taskList.add(new TaskItem(task, dueDate, dueTime));
+                System.out.println(taskList.get(taskList.size() - 1).getDueDate() + taskList.get(taskList.size() - 1).getDueTime());
             }
         });
     }

@@ -9,11 +9,9 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 public class viewList extends AppCompatActivity {
-    public static int index = -1;
     private RecyclerView taskListRecyclerView;
     private RecyclerView.Adapter taskListViewAdapter;
     private RecyclerView.LayoutManager tasksViewLayoutManager;
-    private Button completeRemovalButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,19 +19,6 @@ public class viewList extends AppCompatActivity {
         setContentView(R.layout.view_list);
         buildTaskRecyclerView();
         configureBackButton();
-
-        //Below removes the desired completed task from view_list screen
-        completeRemovalButton = findViewById(R.id.removeCompleteButton);
-        completeRemovalButton.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view) {
-                if (!(index > MainActivity.taskList.size()) && !(index < 0)) {
-                    MainActivity.taskList.remove(index);
-                    taskListViewAdapter.notifyItemRemoved(index);
-                }
-                index = -1;
-            }
-        });
     }
 
     /**

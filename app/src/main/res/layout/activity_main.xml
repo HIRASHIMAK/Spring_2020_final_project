@@ -81,7 +81,7 @@
         android:id="@+id/tilteTextView"
         android:layout_width="294dp"
         android:layout_height="55dp"
-        android:background="@color/colorAccent"
+        android:background="@color/title_colro"
         android:lineSpacingExtra="8sp"
         android:text="Todo List"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
