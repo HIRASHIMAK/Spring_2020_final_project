@@ -4,16 +4,20 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 public class viewList extends AppCompatActivity {
+    private RecyclerView taskListRecyclerView;
+    private RecyclerView.Adapter taskListViewAdapter;
+    private RecyclerView.LayoutManager tasksViewLayoutManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.view_list);
-
+        buildTaskRecyclerView();
         configureBackButton();
     }
 
@@ -28,5 +32,18 @@ public class viewList extends AppCompatActivity {
                 finish();
             }
         });
+    }
+
+    public void buildTaskRecyclerView() {
+        //Assigns value to the RecyclerView
+        taskListRecyclerView = findViewById(R.id.tasksView);
+        taskListRecyclerView.setHasFixedSize(true);
+        //Assigns value to private instance variable LayoutManager
+        tasksViewLayoutManager = new LinearLayoutManager(this);
+        //Assigns value to private instance variable Adapter
+        taskListViewAdapter = new TaskListAdapter(MainActivity.taskList);
+        // Sets the manager and adapter for RecyclerView
+        taskListRecyclerView.setLayoutManager(tasksViewLayoutManager);
+        taskListRecyclerView.setAdapter(taskListViewAdapter);
     }
 }
