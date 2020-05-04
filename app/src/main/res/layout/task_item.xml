@@ -7,6 +7,7 @@
     app:cardCornerRadius="4dp">
 
     <RelativeLayout
+        android:id="@+id/taskItemLayout"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_margin="4dp">
@@ -31,12 +32,12 @@
             android:id="@+id/dueDateTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_marginTop="4dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginRight="8dp"
+            android:layout_marginStart="201dp"
+            android:layout_marginLeft="201dp"
+            android:layout_marginTop="33dp"
             android:text="TextView"
             tools:text="MM/DD/YY" />
 
@@ -44,14 +45,29 @@
             android:id="@+id/dueTimeTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginEnd="8dp"
-            android:layout_marginRight="8dp"
-            android:layout_marginBottom="4dp"
+            android:layout_marginStart="311dp"
+            android:layout_marginLeft="311dp"
+            android:layout_marginBottom="-1dp"
             android:text="TextView"
             tools:text="00:00" />
+
+        <Button
+            android:id="@+id/removeTaskButton"
+            android:layout_width="77dp"
+            android:layout_height="28dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="2dp"
+            android:layout_marginLeft="2dp"
+            android:layout_marginTop="22dp"
+            android:layout_marginBottom="-1dp"
+            android:text="DONE"
+            android:textSize="8sp" />
 
     </RelativeLayout>
 
